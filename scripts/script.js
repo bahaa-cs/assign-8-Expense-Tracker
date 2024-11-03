@@ -1,7 +1,7 @@
 localStorage.clear()
 const saveTransaction = () => {
     let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
-
+    
     const newTransaction = {
         price: document.getElementById("price").value,
         type: document.getElementById("type").value,
@@ -17,6 +17,7 @@ const saveTransaction = () => {
 
 document.getElementById("transactionForm").addEventListener("submit", (event) => {
     event.preventDefault()
+    
     saveTransaction()
     console.log(localStorage.getItem("Transactions"))
 })

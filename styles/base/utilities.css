@@ -26,3 +26,7 @@
 .filled-btn:hover {
 opacity: 0.7;
 }
+
+.gap{
+    gap: 10px;
+}
