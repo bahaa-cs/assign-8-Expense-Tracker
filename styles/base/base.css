@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Kumbh Sans";
+    src: url("./../../assets/fonts/Kumbh_Sans/static/KumbhSans-Regular.ttf");
+  }
+  
+@font-face {
+    font-family: "Kumbh Sans";
+    src: url("./../../assets/fonts/Kumbh_Sans/static/KumbhSans-Bold.ttf");
+    font-weight: bold;
+}
+
+body{
+    font-family: "Kumbh Sans";
+    padding: 30px;
+}
+
+.nav-bar{
+    width: 100%;
+    margin: 10px;
+    height: 60px;
+    padding: 0px 80px;
+    font-size: 25px;
+}
+
+.nav-title{
+    justify-content: flex-start;
+    width: 33%;
+}
+
+.budget-section{
+    gap: 20px;
+    justify-content: flex-end;
+    width: 33%;
+}
+
+.create-transaction{
+    width: 33%;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/base/base.css">
+    <link rel="stylesheet" href="./styles/base/colors.css">
+    <link rel="stylesheet" href="./styles/base/utilities.css">
+</head>
+<body>
+    <nav class="flex row nav-bar">
+        <div class="flex nav-title">Expense Tracker</div>
+        <div class="flex center create-transaction">
+            <button class=" flex center filled-btn green-bg white-txt">
+                Create Transaction
+            </button>
+        </div>
+        <div class="flex budget-section">
+            <div class="budget-txt">Total Budget:</div>
+            <div class="budget-total">0</div>
+        </div>
+    </nav>
+    <section class="flex row transaction-info primary-bg">
+        <div class="price green-txt">
+           <div class="price-title">Price</div>
+            <div class="price-data"></div>
+        </div>
+        <div class="type green-txt">
+           <div class="type-title">Type</div>
+            <div class="type-data"></div>
+        </div>
+        <div class="date green-txt">
+           <div class="date-title">Date</div>
+            <div class="date-data"></div>
+        </div>
+        <div class="notes green-txt">
+           <div class="notes-title">Notes</div>
+            <div class="notes-data"></div>
+        </div>
+        <div class="edit">
+            <div class="edit-title"></div>
+            <div class="edit-icon"></div>
+        </div>
+    </section>
+
+    <script src="./scripts/apis.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.transaction-info{
+    border-radius: 50px;
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+    justify-content: center;
+}
+
+.transaction-info> div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 10px;
+    width: 215px;
+    height: 100%;
+}
+
+.transaction-info> div>div{
+    font-size: 20px;
+    font-weight: 300;
+}
