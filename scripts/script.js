@@ -4,7 +4,7 @@ const saveTransaction = () => {
     
     let transactionID = document.getElementById("id").value
     
-    if(transactionID !== undefined){
+    if(transactionID !== undefined && transactionID !== ""){
         let index = transactions.findIndex(transaction => transaction.id == transactionID)
         transactions[index].price = document.getElementById("price").value
         transactions[index].type = document.getElementById("type").value
@@ -73,7 +73,7 @@ document.getElementById("transactionForm").addEventListener("submit", (event) =>
     console.log(localStorage.getItem("Transactions"))
 })
 
-// delete
+// edit
 document.addEventListener("click", (event)=>{
     if(event.target.classList.contains("edit-btn")){
         let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
@@ -95,20 +95,8 @@ document.addEventListener("click", (event)=>{
 }
 )
 
-// edit
-// document.addEventListener("click", (event)=>{
-//     if(event.target.classList.contains("edit-btn")){
-//         let transaction_id_edit = event.target.parentElement.parentElement.getAttribute("id")
-        
-//         let transaction_info_element=document.getElementById("transaction-info")
-//         transaction_info_element.getElementById("price")
+//delete
 
-
-//         let index = transactions.findIndex(id => id == transactionID)
-
-//     }
-// }
-// )
 
 
 
