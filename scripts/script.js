@@ -15,11 +15,7 @@ const saveTransaction = () => {
     document.getElementById("transactionForm").reset()
 }
 
-document.getElementById("transactionForm").addEventListener("submit", (event) => {
-    event.preventDefault()
-    
-    saveTransaction()
-
+const addTransactionToHTML = () =>{
     let transaction_info_element=document.getElementById("transaction-info")
     
     let transactions =JSON.parse(localStorage.getItem("Transactions"))
@@ -37,6 +33,14 @@ document.getElementById("transactionForm").addEventListener("submit", (event) =>
             <button class="delete-btn">delete</button>
         </div>
     </div>`
+
+}
+
+document.getElementById("transactionForm").addEventListener("submit", (event) => {
+    event.preventDefault()
+    
+    saveTransaction()
+    addTransactionToHTML()
 
 
     console.log(localStorage.getItem("Transactions"))
