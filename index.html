@@ -20,6 +20,8 @@
     </nav>
     <div class="flex form-section primary-bg">
         <form action="" class="flex column" id="transactionForm">
+            <label for="id">Transaction ID (for edit action)</label>
+            <input type="text" id="id" disabled>
             <label for="price">Price: </label>
             <input type="text" id="price" placeholder="price">
             <label for="type">Type: </label>
@@ -29,7 +31,7 @@
             <label for="notes">Notes: </label>
             <input type="text" id="notes" placeholder="notes">
             <button type="submit" class="flex center create-transaction filled-btn green-bg white-txt ">
-                Create Transaction
+                Save Transaction
             </button>
         </form>
     </div>

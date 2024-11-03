@@ -3,6 +3,7 @@ const saveTransaction = () => {
     let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
     
     const newTransaction = {
+        id: Date.now().toString(),
         price: document.getElementById("price").value,
         type: document.getElementById("type").value,
         date: document.getElementById("date").value,
@@ -23,7 +24,8 @@ const addTransactionToHTML = () =>{
     let length=transactions.length
     transaction_info_element.innerHTML+=
     
-    `<div class="flex row data black-txt" id="${length}">
+    `<div class="flex row data black-txt" id="${transactions[length-1].id}">
+        
         <div class="price">${transactions[length-1].price}</div>
         <div class="type">${transactions[length-1].type}</div>
         <div class="date">${transactions[length-1].date}</div>
@@ -36,13 +38,34 @@ const addTransactionToHTML = () =>{
 
 }
 
+
+// event listeners
+
+// read
 document.getElementById("transactionForm").addEventListener("submit", (event) => {
-    event.preventDefault()
-    
+    event.preventDefault()    
     saveTransaction()
     addTransactionToHTML()
-
-
     console.log(localStorage.getItem("Transactions"))
 })
+
+// delete
+document.addEventListener("click", (event)=>{
+    if(event.target.classList.contains("delete-btn")){
+        event.target.parentElement.parentElement.remove()
+    }
+}
+)
+
+// edit
+document.addEventListener("click", (event)=>{
+    if(event.target.classList.contains("edit-btn")){
+        let transactionID = event.target.parentElement.parentElement.getAttribute("id")
+        console.log(transactionID)
+    }
+}
+)
+
+
+
 
