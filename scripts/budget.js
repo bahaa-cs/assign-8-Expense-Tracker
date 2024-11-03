@@ -7,7 +7,7 @@ const totalBudget = () => {transactions.forEach(transaction => {
             budget = transaction.type=="income" ? budget+Number(transaction.price) : budget-Number(transaction.price)
         
         })
-    document.getElementById("budget-total").innerText = budget
+    document.getElementById("budget-total").innerText = `$ ${budget}`
 }
 totalBudget()
 console.log(budget)
