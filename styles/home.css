@@ -22,13 +22,17 @@
 }
 
 .form-section{
-    width: 50%;
+    width: 100%;
     padding: 15px 15px;
     border-radius: 50px;
     margin: 20px 0px;
     font-size: large;
+    justify-content: center;
 }
 
+.create-transaction{
+    width: 100%;
+}
 form{
     gap: 20px;
 }
