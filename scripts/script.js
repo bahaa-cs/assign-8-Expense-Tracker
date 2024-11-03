@@ -31,16 +31,6 @@ const saveTransaction = () => {
     document.getElementById("transactionForm").reset()
 }
 
-// const deleteTransaction = () => {
-//     let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
-    
-
-
-//     let index = transactions.findIndex(id => id == transactionID)
-
-
-// }
-
 const reloadLocalStorage  = () =>{
     let data_info_element=document.getElementById("data-info")
     
@@ -96,6 +86,22 @@ document.addEventListener("click", (event)=>{
 )
 
 //delete
+document.addEventListener("click", (event)=>{
+    if(event.target.classList.contains("delete-btn")){
+        let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
+        
+        let transactionID = event.target.parentElement.parentElement.getAttribute("id")
+        
+        let index = transactions.findIndex(transaction=> transaction.id == transactionID)
+
+        transactions.splice(index,1)
+        localStorage.setItem("Transactions", JSON.stringify(transactions))
+
+        
+    }
+    reloadLocalStorage()
+}
+)
 
 
 
