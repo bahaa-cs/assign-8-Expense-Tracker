@@ -30,15 +30,16 @@ body{
 
 .nav-title{
     justify-content: flex-start;
-    width: 33%;
+    width: 50%;
 }
 
 .budget-section{
     gap: 20px;
     justify-content: flex-end;
-    width: 33%;
+    width: 50%;
 }
 
 .create-transaction{
-    width: 33%;
+    width: 100%;
+    
 }

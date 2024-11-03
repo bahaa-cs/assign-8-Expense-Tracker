@@ -12,16 +12,22 @@
 <body>
     <nav class="flex row nav-bar">
         <div class="flex nav-title">Expense Tracker</div>
-        <div class="flex center create-transaction">
-            <button class=" flex center filled-btn green-bg white-txt">
-                Create Transaction
-            </button>
-        </div>
+
         <div class="flex budget-section">
             <div class="budget-txt">Total Budget:</div>
             <div class="budget-total">0</div>
         </div>
     </nav>
+    <div class="form-section">
+        <form action="">
+            <div class="flex center create-transaction">
+                <button class=" flex center filled-btn green-bg white-txt">
+                    Create Transaction
+                </button>
+            </div>
+        </form>
+    </div>
+
     <section class="flex row transaction-info primary-bg">
         <div class="price green-txt">
            <div class="price-title">Price</div>
@@ -40,7 +46,7 @@
             <div class="notes-data"></div>
         </div>
         <div class="edit">
-            <div class="edit-title"></div>
+            <div class="edit-title green-txt">Actions</div>
             <div class="edit-icon"></div>
         </div>
     </section>
