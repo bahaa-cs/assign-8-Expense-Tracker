@@ -2,17 +2,30 @@
 const saveTransaction = () => {
     let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
     
+    let transactionID = document.getElementById("id").value
+    
+    if(transactionID !== undefined){
+        let index = transactions.findIndex(transaction => transaction.id == transactionID)
+        transactions[index].price = document.getElementById("price").value
+        transactions[index].type = document.getElementById("type").value
+        transactions[index].date = document.getElementById("date").value
+        transactions[index].notes = document.getElementById("notes").value
 
-    const newTransaction = {
-        id: Date.now().toString(),
-        price: document.getElementById("price").value,
-        type: document.getElementById("type").value,
-        date: document.getElementById("date").value,
-        notes: document.getElementById("notes").value,
+    }
+    else{
+        const newTransaction = {
+            id: Date.now().toString(),
+            price: document.getElementById("price").value,
+            type: document.getElementById("type").value,
+            date: document.getElementById("date").value,
+            notes: document.getElementById("notes").value,
+        }
+        
+        
+        transactions.push(newTransaction)
     }
     
 
-    transactions.push(newTransaction)
 
     localStorage.setItem("Transactions", JSON.stringify(transactions))
     document.getElementById("transactionForm").reset()
@@ -69,6 +82,7 @@ document.addEventListener("click", (event)=>{
         
         let index = transactions.findIndex(transaction=> transaction.id == transactionID)
 
+        document.getElementById("id").value = transactions[index].id
         document.getElementById("price").value = transactions[index].price
         document.getElementById("type").value = transactions[index].type
         document.getElementById("date").value = transactions[index].date
