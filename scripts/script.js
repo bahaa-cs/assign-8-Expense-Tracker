@@ -1,4 +1,4 @@
-localStorage.clear()
+// localStorage.clear()
 const saveTransaction = () => {
     let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
     
@@ -18,10 +18,20 @@ const saveTransaction = () => {
     document.getElementById("transactionForm").reset()
 }
 
+// const deleteTransaction = () => {
+//     let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
+    
+
+
+//     let index = transactions.findIndex(id => id == transactionID)
+
+
+// }
+
 const reloadLocalStorage  = () =>{
     let data_info_element=document.getElementById("data-info")
     
-    let transactions =JSON.parse(localStorage.getItem("Transactions"))
+    let transactions =JSON.parse(localStorage.getItem("Transactions")) || []
     data_info_element.innerHTML=""
     transactions.forEach(transaction =>{
         data_info_element.innerHTML+=
@@ -38,6 +48,7 @@ const reloadLocalStorage  = () =>{
     } )
 
 }
+reloadLocalStorage()
 
 // event listeners
 
@@ -51,9 +62,22 @@ document.getElementById("transactionForm").addEventListener("submit", (event) =>
 
 // delete
 document.addEventListener("click", (event)=>{
-    if(event.target.classList.contains("delete-btn")){
-        event.target.parentElement.parentElement.remove()
+    if(event.target.classList.contains("edit-btn")){
+        let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
+        
+        let transactionID = event.target.parentElement.parentElement.getAttribute("id")
+        
+        let index = transactions.findIndex(transaction=> transaction.id == transactionID)
+
+        document.getElementById("price").value = transactions[index].price
+        document.getElementById("type").value = transactions[index].type
+        document.getElementById("date").value = transactions[index].date
+        document.getElementById("notes").value = transactions[index].notes
+
+        document.getElementById("transactionForm").scrollIntoView()
+        
     }
+    reloadLocalStorage()
 }
 )
 
@@ -66,7 +90,7 @@ document.addEventListener("click", (event)=>{
 //         transaction_info_element.getElementById("price")
 
 
-//         // let index = transactions.findIndex(id => id == transactionID)
+//         let index = transactions.findIndex(id => id == transactionID)
 
 //     }
 // }
