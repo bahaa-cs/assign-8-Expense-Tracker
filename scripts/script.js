@@ -19,12 +19,12 @@ const saveTransaction = () => {
 }
 
 const reloadLocalStorage  = () =>{
-    let transaction_info_element=document.getElementById("data-info")
+    let data_info_element=document.getElementById("data-info")
     
     let transactions =JSON.parse(localStorage.getItem("Transactions"))
-    transaction_info_element.innerHTML=""
+    data_info_element.innerHTML=""
     transactions.forEach(transaction =>{
-        transaction_info_element.innerHTML+=
+        data_info_element.innerHTML+=
         `<div class="flex row data black-txt" id="${transaction.id}">
             <div class="price">${transaction.price}</div>
             <div class="type">${transaction.type}</div>
