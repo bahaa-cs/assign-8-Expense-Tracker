@@ -1,26 +1,26 @@
 .transaction-info{
     border-radius: 50px;
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 15px;
     align-items: center;
     gap: 10px;
 }
 
+.data-info{
+    width: 100%;
+    gap: 15px;
+}
 
-.Titles{
+
+.Titles, .data-info>div{
     justify-content: center;
     width: 100%;
     gap: 150px;
 }
 
 
-.data{
-    justify-content: center;
-    width: 100%;
-    gap: 150px;
-}
-.transaction-info>div>div{
+.Titles>div, .data-info>div>div{
     display: flex;
     justify-content: center;
     align-items: center;
