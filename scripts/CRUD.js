@@ -57,7 +57,6 @@ reloadLocalStorage()
 
 // read
 document.getElementById("transactionForm").addEventListener("submit", (event) => {
-    event.preventDefault()    
     saveTransaction()
     reloadLocalStorage()
     console.log(localStorage.getItem("Transactions"))
@@ -96,10 +95,12 @@ document.addEventListener("click", (event)=>{
 
         transactions.splice(index,1)
         localStorage.setItem("Transactions", JSON.stringify(transactions))
-
+        location.reload()
         
     }
+    
     reloadLocalStorage()
+    
 }
 )
 
