@@ -20,21 +20,31 @@ body{
     padding: 30px;
 }
 
+.nav-margin{
+    margin: 10px;
+}
+
 .nav-bar{
     width: 100%;
-    margin: 10px;
+    
     height: 60px;
     padding: 0px 80px;
     font-size: 25px;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+@media screen and (max-width:870px){
+    .nav-margin{
+        margin-bottom: 150px;
+    }
+    
 }
 
 .nav-title{
-    justify-content: flex-start;
-    width: 50%;
+    width: 300px;
 }
 
 .budget-section{
     gap: 20px;
-    justify-content: flex-end;
-    width: 50%;
+    width: 300px;
 }

@@ -18,9 +18,9 @@ form{
 
 
 .Titles, .data-info>div{
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
-    gap: 150px;
+
 }
 
 
@@ -72,12 +72,14 @@ form{
     font-size: large;
     justify-content: space-between;
     gap :15px;
+    
 }
 
 .filter-section{
     font-size: large;
     justify-content: center;
     gap :15px;
+    flex-wrap: wrap;
 
 }
 
