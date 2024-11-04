@@ -18,18 +18,24 @@
             <div class="budget-total" id="budget-total"></div>
         </div>
     </nav>
+
+    <div class="filter-container">
+
+    </div>
+
+
     <div class="flex form-section primary-bg">
         <form action="" class="flex column" id="transactionForm">
             <label for="id">Transaction ID (for edit action)</label>
             <input type="text" id="id" disabled>
             <label for="price">Price: </label>
-            <input type="text" id="price" placeholder="price">
+            <input type="text" id="price" placeholder="price" required>
             <label for="type">Type: </label>
-            <input type="text" id="type" placeholder="type">
+            <input type="text" id="type" placeholder="type" required>
             <label for="date">Date: </label>
-            <input type="date" id="date">
+            <input type="date" id="date" required>
             <label for="notes">Notes: </label>
-            <input type="text" id="notes" placeholder="notes">
+            <input type="text" id="notes" placeholder="notes" required>
             <button type="submit" class="flex center create-transaction filled-btn green-bg white-txt ">
                 Save Transaction
             </button>
@@ -53,5 +59,6 @@
 
     <script src="./scripts/CRUD.js"></script>
     <script src="./scripts/budget.js"></script>
+    <script src="./scripts/filter.js"></script>
 </body>
 </html>
