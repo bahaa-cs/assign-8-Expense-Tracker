@@ -28,9 +28,10 @@
 }
 
 .data>div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     width: 160px;
 }
 
