@@ -26,14 +26,14 @@
             <label for="price">Price: </label>
             <input type="text" id="price" placeholder="price" required>
             <label for="type">Type: </label>
-            <select id="type" name="type">
+            <select id="type" name="type" required>
                 <option value="income" selected>income</option>
                 <option value="expense">expense</option>
             </select>
             <label for="date">Date: </label>
-            <input type="date" id="date">
+            <input type="date" id="date" required>
             <label for="notes">Notes: </label>
-            <input type="text" id="notes" placeholder="notes">
+            <input type="text" id="notes" placeholder="notes" required>
             <button type="submit" class="flex center create-transaction filled-btn green-bg white-txt">
                 Save Transaction
             </button>
@@ -50,7 +50,7 @@
             <option value="income">income</option>
             <option value="expense">expense</option>
         </select>
-        <input type="date" id="date-filter" placeholder="filter by date">
+        <input type="date" id="date-filter">
         <input type="text" id="notes-filter" placeholder="filter by notes">
         <button id="filter">filter</button>
     </div>
