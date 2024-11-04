@@ -33,9 +33,7 @@ form{
 
 .data>div{
     text-align: center;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+    overflow-wrap:anywhere;
     width: 160px;
 }
 
