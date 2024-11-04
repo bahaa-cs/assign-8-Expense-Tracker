@@ -3,6 +3,7 @@ document.getElementById("filter").addEventListener("click", () => {
     filter_maxPrice()
     filter_type()
     filter_date()
+    filter_notes()
 
 })
 const filter_minPrice = () =>{
@@ -46,6 +47,17 @@ const filter_date = () =>{
     })
     localStorage.setItem("newTransactions", JSON.stringify(newTransactions))
     if(date)
+    reloadLocalStorage(newTransactions)
+
+}
+
+const filter_notes = () =>{
+    let notes = document.getElementById("notes-filter").value
+
+    let newTransactions = transactions.filter(transaction => {
+        return transaction.notes.includes(notes)  })
+    localStorage.setItem("newTransactions", JSON.stringify(newTransactions))
+    if(notes)
     reloadLocalStorage(newTransactions)
 
 }
