@@ -31,11 +31,14 @@
             <label for="price">Price: </label>
             <input type="text" id="price" placeholder="price" required>
             <label for="type">Type: </label>
-            <input type="text" id="type" placeholder="type" required>
+            <select id="type" name="type">
+                <option value="income" selected>income</option>
+                <option value="expense">expense</option>
+            </select>
             <label for="date">Date: </label>
-            <input type="date" id="date" required>
+            <input type="date" id="date">
             <label for="notes">Notes: </label>
-            <input type="text" id="notes" placeholder="notes" required>
+            <input type="text" id="notes" placeholder="notes">
             <button type="submit" class="flex center create-transaction filled-btn green-bg white-txt ">
                 Save Transaction
             </button>
