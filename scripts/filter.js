@@ -1,6 +1,7 @@
 document.getElementById("filter").addEventListener("click", () => {
     filter_minPrice()
     filter_maxPrice()
+    filter_type()
 
 })
 const filter_minPrice = () =>{
@@ -24,5 +25,16 @@ const filter_maxPrice = () =>{
     if(maxPrice!==0)
     reloadLocalStorage(newTransactions)
 };
+
+const filter_type = () =>{
+    let type = document.getElementById("type-filter").value
+    let newTransactions = transactions.filter(transaction => {
+        return transaction.type == type
+    })
+    localStorage.setItem("newTransactions", JSON.stringify(newTransactions))
+    if(type=="income" || type=="expense")
+    reloadLocalStorage(newTransactions)
+
+}
 
 
