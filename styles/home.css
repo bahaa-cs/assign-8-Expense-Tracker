@@ -1,3 +1,7 @@
+form{
+    gap: 20px;
+}
+
 .transaction-info{
     border-radius: 50px;
     width: 100%;
@@ -49,9 +53,7 @@
     width: 100%;
 }
 
-form{
-    gap: 20px;
-}
+
 
 .data{
     color: #141414;
@@ -63,4 +65,29 @@ form{
     gap: 4px;  
 }
 
+.filter-container{
+    padding: 15px 15px;
+    border-radius: 50px;
+    margin: 20px 0px;
+    font-size: large;
+    justify-content: space-between;
+    gap :15px;
+}
 
+.filter-section{
+    font-size: large;
+    justify-content: center;
+    gap :15px;
+
+}
+
+.filter-title{
+    margin-left: 32px;
+    font-weight: bolder;
+    width: 200px;
+    font-size: 35px;
+}
+
+.filter-section>input{
+    text-align: center;
+}
