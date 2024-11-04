@@ -29,12 +29,13 @@ const saveTransaction = () => {
 
     localStorage.setItem("Transactions", JSON.stringify(transactions))
     document.getElementById("transactionForm").reset()
+
+    return transactions
 }
 
-const reloadLocalStorage  = () =>{
+const reloadLocalStorage  = (transactions) =>{
     let data_info_element=document.getElementById("data-info")
     
-    let transactions =JSON.parse(localStorage.getItem("Transactions")) || []
     data_info_element.innerHTML=""
     transactions.forEach(transaction =>{
         data_info_element.innerHTML+=
@@ -51,14 +52,17 @@ const reloadLocalStorage  = () =>{
     } )
 
 }
-reloadLocalStorage()
+window.addEventListener("load", () => {
+    let transactions = JSON.parse(localStorage.getItem("Transactions")) || [];
+    reloadLocalStorage(transactions);
+})
 
 // event listeners
 
 // read
 document.getElementById("transactionForm").addEventListener("submit", (event) => {
-    saveTransaction()
-    reloadLocalStorage()
+    
+    reloadLocalStorage(saveTransaction())
     console.log(localStorage.getItem("Transactions"))
 })
 
@@ -78,28 +82,29 @@ document.addEventListener("click", (event)=>{
         document.getElementById("notes").value = transactions[index].notes
 
         document.getElementById("transactionForm").scrollIntoView()
-        
+        // reloadLocalStorage(transactions)
     }
-    reloadLocalStorage()
+    
 }
 )
 
 //delete
 document.addEventListener("click", (event)=>{
+    let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
+
     if(event.target.classList.contains("delete-btn")){
-        let transactions = JSON.parse(localStorage.getItem("Transactions")) || []
         
         let transactionID = event.target.parentElement.parentElement.getAttribute("id")
         
         let index = transactions.findIndex(transaction=> transaction.id == transactionID)
 
         transactions.splice(index,1)
-        localStorage.setItem("Transactions", JSON.stringify(transactions))
+        
         location.reload()
         
     }
-    
-    reloadLocalStorage()
+    localStorage.setItem("Transactions", JSON.stringify(transactions))
+    // reloadLocalStorage(transactions)
     
 }
 )

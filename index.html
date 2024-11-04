@@ -19,11 +19,6 @@
         </div>
     </nav>
 
-    <div class="filter-container">
-
-    </div>
-
-
     <div class="flex form-section primary-bg">
         <form action="" class="flex column" id="transactionForm">
             <label for="id">Transaction ID (for edit action)</label>
@@ -39,11 +34,28 @@
             <input type="date" id="date">
             <label for="notes">Notes: </label>
             <input type="text" id="notes" placeholder="notes">
-            <button type="submit" class="flex center create-transaction filled-btn green-bg white-txt ">
+            <button type="submit" class="flex center create-transaction filled-btn green-bg white-txt">
                 Save Transaction
             </button>
         </form>
     </div>
+    
+    
+    
+    <div class="filter-container">
+        <input type="number" id="min-price-filter" placeholder="filter by min price">
+        <input type="number" id="max-price-filter" placeholder="filter by max price">
+        <select id="type-filter">
+            <option value="all" selected>all types</option>
+            <option value="income">income</option>
+            <option value="expense">expense</option>
+        </select>
+        <input type="date" id="date-filter" placeholder="filter by date">
+        <input type="text" id="notes-filter" placeholder="filter by notes">
+        <button id="filter">filter</button>
+    </div>
+
+
 
     <section class="flex column transaction-info primary-bg" id="transaction-info">
         <div class="flex row Titles green-txt">
