@@ -45,8 +45,8 @@ const reloadLocalStorage  = (transactions) =>{
             <div class="date">${transaction.date}</div>
             <div class="notes">${transaction.notes}</div>
             <div class="flex row action-btns black-txt">
-                <button class="edit-btn">edit</button>
-                <button class="delete-btn">delete</button>
+                <button class="edit-btn action-btn black-txt">edit</button>
+                <button class="delete-btn action-btn red-bg white-txt">delete</button>
             </div>
         </div>`
     } )
